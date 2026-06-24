@@ -2,6 +2,6 @@
   "name": "workspace",
   "private": true,
   "scripts": {
-    "postinstall": "pnpm --prefix artifacts/eq-partner-client install --no-frozen-lockfile"
+    "postinstall": "npm install --prefix artifacts/eq-partner-client"
   }
 }
