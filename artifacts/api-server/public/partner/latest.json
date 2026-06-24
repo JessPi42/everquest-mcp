@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "notes": "See the release page for details.",
+  "pub_date": "2026-06-24T21:08:59Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMmtlNEFnall5cElpeTYyMVllYlY0SDJaRjBicm9jcTVOWWVDaS9IdTgram00YlVGWkl1SGJvaGVqb2xJb0JZRStxMEgvb0hBRXZuSFQwYkp1QXkxdXNzUVNLRFhEcWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyMzM1MzM0CWZpbGU6RVEgUGFydG5lcl8wLjEuMF94NjQtc2V0dXAubnNpcy56aXAKT2JxMWJTb21EVzZjTTNVeHc0UTRvTzlPcHkwd05GekhmV2pFd29rdUdQVGJpSmNaVThIbXZJZVFDTzNNSkdPVXlkUU5JaXhtdy9ZRm1LYThzaWpTQVE9PQo=",
+      "url": "https://github.com/JessPi42/everquest-mcp/releases/download/main/EQ Partner_0.1.0_x64-setup.nsis.zip"
+    }
+  }
+}
