@@ -31,12 +31,15 @@
   "bundle": {
     "active": true,
     "targets": "nsis",
-    "icon": ["icons/tray-idle.png"],
+    "icon": [
+      "icons/tray-idle.png"
+    ],
     "windows": {
       "wix": {
         "language": "en-US"
       }
-    }
+    },
+    "createUpdaterArtifacts": true
   },
   "plugins": {
     "store": {
