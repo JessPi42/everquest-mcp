@@ -2,6 +2,6 @@
   "name": "workspace",
   "private": true,
   "scripts": {
-    "postinstall": "npm install --prefix artifacts/eq-partner-client"
+    "postinstall": "cd artifacts/eq-partner-client && npm install"
   }
 }
