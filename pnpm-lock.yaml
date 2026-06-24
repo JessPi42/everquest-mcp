@@ -8,6 +8,3 @@ importers:
 
   .:
     {}
-
-  artifacts/eq-partner-client:
-    {}
