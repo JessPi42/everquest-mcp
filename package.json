@@ -1,22 +1,4 @@
 {
   "name": "workspace",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "codegen": "pnpm --filter @workspace/api-spec run codegen",
-    "codegen:check": "pnpm run codegen && git diff --exit-code lib/api-client-react/src/generated lib/api-zod/src/generated",
-    "build": "pnpm run codegen && pnpm run typecheck && pnpm -r --if-present run build",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
-    "build:partner-client": "cd artifacts/eq-partner-client/go-client && GOOS=windows GOARCH=amd64 go build -ldflags='-s -w' -o eq-partner.exe . && cp eq-partner.exe ../../api-server/public/partner/eq-partner.exe"
-  },
-  "private": true,
-  "devDependencies": {
-    "prettier": "^3.8.3",
-    "typescript": "~5.9.3"
-  },
-  "dependencies": {
-    "@replit/connectors-sdk": "^0.4.1"
-  }
+  "private": true
 }
