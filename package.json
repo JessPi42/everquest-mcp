@@ -1,53 +1,22 @@
 {
-  "name": "everquest-mcp",
-  "version": "1.0.0",
-  "description": "MCP server for EverQuest game data - search spells, items, NPCs, zones, quests across multiple databases",
-  "type": "module",
-  "main": "dist/index.js",
-  "bin": {
-    "everquest-mcp": "./dist/index.js"
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc && node dist/index.js",
-    "test": "tsc && node dist/tests/tools.test.js",
-    "prepublishOnly": "npm run build && npm test"
-  },
-  "keywords": [
-    "everquest",
-    "eq",
-    "mcp",
-    "model-context-protocol",
-    "claude",
-    "ai",
-    "gaming",
-    "mmo",
-    "allakhazam"
-  ],
-  "author": "Arthur Sabintsev",
+  "name": "workspace",
+  "version": "0.0.0",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ArtSabintsev/everquest-mcp.git"
+  "scripts": {
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
+    "codegen": "pnpm --filter @workspace/api-spec run codegen",
+    "codegen:check": "pnpm run codegen && git diff --exit-code lib/api-client-react/src/generated lib/api-zod/src/generated",
+    "build": "pnpm run codegen && pnpm run typecheck && pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
+    "build:partner-client": "cd artifacts/eq-partner-client/go-client && GOOS=windows GOARCH=amd64 go build -ldflags='-s -w' -o eq-partner.exe . && cp eq-partner.exe ../../api-server/public/partner/eq-partner.exe"
   },
-  "bugs": {
-    "url": "https://github.com/ArtSabintsev/everquest-mcp/issues"
-  },
-  "homepage": "https://github.com/ArtSabintsev/everquest-mcp#readme",
-  "engines": {
-    "node": ">=18.0.0"
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "typescript": "~5.9.3"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.10.0",
-    "typescript": "^5.3.0"
+    "@replit/connectors-sdk": "^0.4.1"
   }
 }

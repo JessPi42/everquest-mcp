@@ -1,0 +1,53 @@
+{
+  "productName": "EQ Partner",
+  "version": "0.1.0",
+  "identifier": "com.eq-compendium.eq-partner",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "settings",
+        "title": "EQ Partner",
+        "width": 520,
+        "height": 620,
+        "resizable": false,
+        "visible": false,
+        "decorations": true,
+        "alwaysOnTop": false,
+        "center": true
+      }
+    ],
+    "trayIcon": {
+      "iconPath": "icons/tray-idle.png",
+      "iconAsTemplate": true,
+      "menuOnLeftClick": false
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "nsis",
+    "icon": ["icons/tray-idle.png"],
+    "windows": {
+      "wix": {
+        "language": "en-US"
+      }
+    }
+  },
+  "plugins": {
+    "store": {
+      "autoSave": 500
+    },
+    "updater": {
+      "endpoints": [
+        "https://github.com/JessPi42/everquest-mcp/releases/latest/download/latest.json"
+      ],
+      "dialog": false,
+      "pubkey": "RWRtwKBJqwAJ8OZHU5OMe3Rs/L881b4G3Vyg6QjD/SGCxoGwPTD5NQVA"
+    }
+  }
+}
