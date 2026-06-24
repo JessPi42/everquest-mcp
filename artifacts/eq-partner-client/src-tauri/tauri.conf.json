@@ -39,7 +39,7 @@
         "language": "en-US"
       }
     },
-    "createUpdaterArtifacts": true
+    "createUpdaterArtifacts": "v1Compatible"
   },
   "plugins": {
     "store": {
